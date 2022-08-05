@@ -11,6 +11,7 @@ import { AntdComponentsSampleModule } from 'modules/use-antd/browser';
 import { EditorTitleSampleModule } from 'modules/editor-title/browser';
 import { WelcomeContentSampleModule } from 'modules/add-welcome-content/browser';
 import { TogglePanelSampleModule } from 'modules/toggle-panel/browser';
+import { RunnerCodeModule } from 'modules/runnerCode/browser';
 
 import './i18n';
 import './styles.less';
@@ -27,16 +28,21 @@ renderApp({
     AntdComponentsSampleModule,
     EditorTitleSampleModule,
     WelcomeContentSampleModule,
-    TogglePanelSampleModule,
+    TogglePanelSampleModule, 
+    RunnerCodeModule
   ],
   layoutConfig: {
     ...defaultConfig,
-    ...{[SlotLocation.top]: {
-      modules: ['@opensumi/ide-menu-bar', 'toolbar'],
-    }},
-    ...{[SlotLocation.action]: {
-      modules: ['@opensumi/ide-toolbar-action'],
-  }},
+    ...{
+      [SlotLocation.top]: {
+        modules: ['@opensumi/ide-menu-bar', 'toolbar'],
+      }
+    },
+    ...{
+      [SlotLocation.action]: {
+        modules: ['@opensumi/ide-toolbar-action'],
+      }
+    },
   },
   useCdnIcon: false,
   useExperimentalShadowDom: false,
